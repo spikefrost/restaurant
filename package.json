@@ -1,0 +1,19 @@
+{
+  "name": "smart-restaurant",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "esbuild src/index.tsx --bundle --outfile=dist/worker.js --format=esm --target=es2022 --jsx=automatic --jsx-import-source=hono/jsx --minify",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "hono": "^4.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.99.0"
+  }
+}
